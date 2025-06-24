@@ -191,7 +191,6 @@
     firefox
     easyeffects
     steam-run
-    discord
     containerlab
 
     wl-clipboard
