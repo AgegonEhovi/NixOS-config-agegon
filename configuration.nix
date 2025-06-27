@@ -148,7 +148,7 @@
   users.users.agegon = {
     isNormalUser = true;
     description = "agegon";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -210,6 +210,10 @@
   virtualisation.spiceUSBRedirection.enable = true;
   users.groups.libvirtd.members = ["agegon"];
   virtualisation.libvirtd.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+  };
   
   # Automatic garbage collection
   nix.gc = {
