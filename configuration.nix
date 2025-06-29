@@ -193,6 +193,8 @@
     steam-run
     containerlab
 
+    zerotierone
+
     wl-clipboard
 
     python3
@@ -206,6 +208,13 @@
     libguestfs
     virt-viewer
   ];
+
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [
+      "9e1948db63f31820"
+    ];
+  };
   
   virtualisation.spiceUSBRedirection.enable = true;
   users.groups.libvirtd.members = ["agegon"];
