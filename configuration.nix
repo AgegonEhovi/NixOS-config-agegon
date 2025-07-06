@@ -218,7 +218,10 @@
   
   virtualisation.spiceUSBRedirection.enable = true;
   users.groups.libvirtd.members = ["agegon"];
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    onBoot = "start"; 
+  };
 
   virtualisation.docker = {
     enable = true;
