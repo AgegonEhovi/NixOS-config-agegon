@@ -70,9 +70,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-  
+ 
   networking = {
     firewall = {
       enable = true;
@@ -215,14 +213,8 @@
     virtiofsd
     libguestfs
     virt-viewer
+    bridge-utils
   ];
-
-  services.zerotierone = {
-    enable = true;
-    joinNetworks = [
-      "9e1948db63f31820"
-    ];
-  };
   
   virtualisation.spiceUSBRedirection.enable = true;
   users.groups.libvirtd.members = ["agegon"];
