@@ -196,10 +196,9 @@
     firefox
     easyeffects
     steam-run
-    containerlab
 
-    zerotierone
     lutris
+    qbittorrent
 
     wl-clipboard
 
@@ -213,7 +212,6 @@
     virtiofsd
     libguestfs
     virt-viewer
-    bridge-utils
   ];
   
   virtualisation.spiceUSBRedirection.enable = true;
