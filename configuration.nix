@@ -122,7 +122,10 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  
+  programs.niri.enable = true;
+  
+  services.xserver.desktopManager.gnome.enable = false;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -212,6 +215,16 @@
     virtiofsd
     libguestfs
     virt-viewer
+
+	fuzzel
+    mako
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+    alacritty
+    swaybg
+    swayidle
+    swaylock
+    xwayland-satellite
   ];
   
   virtualisation.spiceUSBRedirection.enable = true;
