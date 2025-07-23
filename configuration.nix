@@ -199,7 +199,8 @@
     firefox
     easyeffects
     steam-run
-
+	v2rayn
+	
     lutris
     qbittorrent
 
