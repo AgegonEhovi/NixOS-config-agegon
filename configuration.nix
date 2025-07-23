@@ -199,7 +199,6 @@
     firefox
     easyeffects
     steam-run
-	v2rayn
 	
     lutris
     qbittorrent
@@ -216,6 +215,7 @@
     virtiofsd
     libguestfs
     virt-viewer
+    distrobox
 
 	fuzzel
     mako
