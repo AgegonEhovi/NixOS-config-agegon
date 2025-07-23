@@ -15,10 +15,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_6_14;
+  boot.kernelPackages = pkgs.pkgs.linuxPackages_zen;
   
   boot.kernelModules = [ "kvm-amd" ];
-  boot.kernelParams = [ "hugepages=2048" ];
+  boot.kernelParams = [ "hugepages=2048" "elevator=bfq" ];
 
   # Enable OpenGL
   hardware.graphics = {
