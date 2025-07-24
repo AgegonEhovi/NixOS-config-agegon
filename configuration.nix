@@ -124,8 +124,7 @@
   services.xserver.displayManager.gdm.enable = true;
   
   programs.niri.enable = true;
-  
-  services.xserver.desktopManager.gnome.enable = false;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -199,8 +198,11 @@
     firefox
     easyeffects
     steam-run
-	
+    xray
+    nekoray
+    sing-box
     lutris
+    bottles
     qbittorrent
 
     wl-clipboard
@@ -227,6 +229,17 @@
     swaylock
     xwayland-satellite
   ];
+
+  programs.nekoray.tunMode.enable = true;
+
+  security.wrappers = {
+    nekobox_core = {
+      owner = "root";
+      group = "root";
+      source = "${pkgs.nekoray.nekobox-core}/bin/nekobox_core";
+      capabilities = "cap_net_admin=ep";
+    };
+  };
   
   virtualisation.spiceUSBRedirection.enable = true;
   users.groups.libvirtd.members = ["agegon"];
