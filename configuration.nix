@@ -122,10 +122,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  
-  programs.niri.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-  services.desktopManager.cosmic.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -219,16 +216,6 @@
     libguestfs
     virt-viewer
     distrobox
-
-	fuzzel
-    mako
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
-    alacritty
-    swaybg
-    swayidle
-    swaylock
-    xwayland-satellite
   ];
 
   programs.nekoray.tunMode.enable = true;
