@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, nixosConfigDir, ... }:
 
 {
   # Базовые настройки
@@ -10,7 +10,7 @@
   dconf.enable = true;
 
   # Обои
-  dconf.settings."org/gnome/desktop/background".picture-uri = "file:///etc/nixos/wallpaper.jpg";
+  dconf.settings."org/gnome/desktop/background".picture-uri = "file://${nixosConfigDir}/home-manager/agegon/wallpaper/marine-tunnel.jpg";
 
   # Настройки GNOME
   dconf.settings = {
@@ -20,17 +20,17 @@
       gtk-theme = "Adwaita-dark";
     };
 
-    # Фиксированные 4 рабочих стола
+    # Фиксированные 5 рабочих стола
     "org/gnome/mutter" = {
       dynamic-workspaces = false;
     };
     "org/gnome/desktop/wm/preferences" = {
-      num-workspaces = 4;
+      num-workspaces = 5;
     };
 
     # Запуск приложений на текущем рабочем столе
     "org/gnome/shell/app-switcher" = {
-      current-workspace-only = true;
+      current-workspace-only = false;
     };
 
     # Настройки клавиш
@@ -43,12 +43,14 @@
       switch-to-workspace-2 = ["<Super>2"];
       switch-to-workspace-3 = ["<Super>3"];
       switch-to-workspace-4 = ["<Super>4"];
+      switch-to-workspace-5 = ["<Super>5"];
       
       # Перемещение окон
       move-to-workspace-1 = ["<Shift><Super>1"];
       move-to-workspace-2 = ["<Shift><Super>2"];
       move-to-workspace-3 = ["<Shift><Super>3"];
       move-to-workspace-4 = ["<Shift><Super>4"];
+      move-to-workspace-5 = ["<Shift><Super>5"];
     };
 
 	# Скриншот
