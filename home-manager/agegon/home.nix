@@ -10,7 +10,7 @@
   dconf.enable = true;
 
   # Обои
-  dconf.settings."org/gnome/desktop/background".picture-uri = "file://${nixosConfigDir}/home-manager/agegon/wallpaper/marine-tunnel.jpg";
+  dconf.settings."org/gnome/desktop/background".picture-uri-dark = "file://${nixosConfigDir}/home-manager/agegon/wallpaper/marine-tunnel.jpg";
 
   # Настройки GNOME
   dconf.settings = {
