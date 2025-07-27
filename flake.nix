@@ -12,13 +12,12 @@
   outputs = { self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
-      # Определяем путь к вашей конфигурации
       nixosConfigDir = "/home/agegon/nixos-config";
     in
     {
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit nixosConfigDir; }; # Передаем путь в модули
+        specialArgs = { inherit nixosConfigDir; };
         modules = [
           # Импортируем основной конфиг хоста
           ./hosts/desktop/configuration.nix
@@ -41,7 +40,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit nixosConfigDir; }; # Передаем путь в Home Manager
+            home-manager.extraSpecialArgs = { inherit nixosConfigDir; };
             home-manager.users.agegon = import ./home-manager/agegon/home.nix;
           }
         ];
