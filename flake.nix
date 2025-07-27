@@ -1,42 +1,50 @@
 {
-  description = "A simple NixOS flake";
+  description = "A modular NixOS flake for agegon's system";
 
   inputs = {
-    # NixOS official package source, using the nixos-25.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
-      # The `follows` keyword in inputs is used for inheritance.
-      # Here, `inputs.nixpkgs` of home-manager is kept consistent with
-      # the `inputs.nixpkgs` of the current flake,
-      # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-  
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, home-manager, ... }:
+    let
       system = "x86_64-linux";
-      #specialArgs = {inherit inputs;};
-      modules = [
-        # Import the previous configuration.nix we used,
-        # so the old configuration file still takes effect
-        ./configuration.nix
+      # Определяем путь к вашей конфигурации
+      nixosConfigDir = "/home/agegon/nixos-config";
+    in
+    {
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit nixosConfigDir; }; # Передаем путь в модули
+        modules = [
+          # Импортируем основной конфиг хоста
+          ./hosts/desktop/configuration.nix
 
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-        home-manager.nixosModules.home-manager
-         {
-           home-manager.useGlobalPkgs = true;
-           home-manager.useUserPackages = true;
+          # Подключаем модули NixOS
+          ./nixos-modules/core.nix
+          ./nixos-modules/nvidia.nix
+          ./nixos-modules/networking.nix
+          ./nixos-modules/gnome.nix
+          ./nixos-modules/audio.nix
+          ./nixos-modules/virtualisation.nix
+          ./nixos-modules/containerization.nix
+          ./nixos-modules/gaming.nix
+          ./nixos-modules/nix.nix
+          ./nixos-modules/users.nix
+          ./nixos-modules/security.nix
 
-
-           home-manager.users.agegon = import ./home.nix;
-
-           # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-        }
-      ];
+          # Подключаем Home Manager
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit nixosConfigDir; }; # Передаем путь в Home Manager
+            home-manager.users.agegon = import ./home-manager/agegon/home.nix;
+          }
+        ];
+      };
     };
-  };
 }
