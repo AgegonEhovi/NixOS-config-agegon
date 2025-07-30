@@ -9,11 +9,13 @@
   # Включение управления GNOME через dconf
   dconf.enable = true;
 
-  # Обои
-  dconf.settings."org/gnome/desktop/background".picture-uri-dark = "file://${nixosConfigDir}/home-manager/agegon/wallpaper/marine-tunnel.jpg";
-
   # Настройки GNOME
   dconf.settings = {
+    # Обои
+    "org/gnome/desktop/background" = {
+      picture-uri-dark = "file://${nixosConfigDir}/home-manager/agegon/wallpaper/marine-tunnel.jpg";
+    };
+
     # Темная тема
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";

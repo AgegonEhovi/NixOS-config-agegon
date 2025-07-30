@@ -58,6 +58,7 @@
     wl-clipboard
     python3
     go
+    jdk24
     distrobox
   ];
 
