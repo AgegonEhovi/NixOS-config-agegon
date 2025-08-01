@@ -11,7 +11,7 @@
   networking.firewall = {
     enable = true;
     # Разрешить базовые службы
-    allowedTCPPorts = [ 22 ]; # SSH
+    allowedTCPPorts = [ 22 8000]; 
     allowedUDPPorts = [
       5353 # mDNS (обнаружение устройств в сети)
       9993 # ZeroTier
@@ -27,4 +27,8 @@
     # Разрешить ping
     allowPing = true;
   };
+
+  # services.tailscale.enable = true;
+
+  
 }
