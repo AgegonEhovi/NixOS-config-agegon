@@ -15,9 +15,6 @@
 
   # System Packages for Gaming
   environment.systemPackages = with pkgs; [
-    # steam-run # Already included via programs.steam
-    lutris
-    bottles
     mangohud
   ];
 }

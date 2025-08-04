@@ -52,10 +52,7 @@
     xray
     nekoray
     sing-box
-    lutris
-    bottles
     qbittorrent
-    wl-clipboard
     python3
     go
     jdk24
