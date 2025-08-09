@@ -16,6 +16,13 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/bbeececc-d032-48b6-b9d9-10ecedbeb6fb";
       fsType = "ext4";
+      options = ["discard" "noatime"];
+    };
+
+  fileSystems."/mnt/hdd" =
+    { device = "/dev/disk/by-uuid/e56cdbb5-f452-4000-b6fa-c3d526bdb0c2";
+      fsType = "ext4";
+      options = [ "noatime" "defaults"];
     };
 
   fileSystems."/boot" =

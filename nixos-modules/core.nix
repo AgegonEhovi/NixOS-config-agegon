@@ -6,6 +6,10 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.kernelParams = [ "hugepages=2048" "elevator=bfq" ];
 
+  environment.variables = {
+    GSK_RENDERER = "ngl"; 
+  };
+
   # Graphics
   hardware.graphics = {
     enable = true;
