@@ -11,6 +11,15 @@
 
   # Настройки GNOME
   dconf.settings = {
+    "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = [];
+      switch-to-application-2 = [];
+      switch-to-application-3 = [];
+      switch-to-application-4 = [];
+      switch-to-application-5 = [];
+      show-screenshot-ui = ["<Shift><Super>s"];
+    };
+    
     # Обои
     "org/gnome/desktop/background" = {
       picture-uri-dark = "file://${nixosConfigDir}/home-manager/agegon/wallpaper/marine-tunnel.jpg";
@@ -45,19 +54,14 @@
       switch-to-workspace-2 = ["<Super>2"];
       switch-to-workspace-3 = ["<Super>3"];
       switch-to-workspace-4 = ["<Super>4"];
-      switch-to-workspace-5 = ["<Super>5"];
+      switch-to-workspace-last = ["<Super>5"];
       
       # Перемещение окон
       move-to-workspace-1 = ["<Shift><Super>1"];
       move-to-workspace-2 = ["<Shift><Super>2"];
       move-to-workspace-3 = ["<Shift><Super>3"];
       move-to-workspace-4 = ["<Shift><Super>4"];
-      move-to-workspace-5 = ["<Shift><Super>5"];
-    };
-
-	# Скриншот
-    "org/gnome/shell/keybindings" = {
-      show-screenshot-ui = ["<Shift><Super>s"];
+      move-to-workspace-last = ["<Shift><Super>5"];
     };
 
     # Отключение аппаратного ускорения мыши
@@ -108,6 +112,12 @@
   home.packages = with pkgs; [
   ];
 
+  programs.git = {
+    enable = true;
+    userName = "AgegonEhovi";
+    userEmail = "feedcreep@yandex.ru";
+  };
+  
   # Включение Home Manager
   programs.home-manager.enable = true;
 }

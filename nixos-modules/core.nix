@@ -44,6 +44,7 @@
     vim
     wget
     git
+    tree
     telegram-desktop
     hiddify-app
     keepassxc
