@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
   ];
 
-  networking.hostName = "nixos";
+  networking.hostName = "desktop";
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
