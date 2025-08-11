@@ -3,7 +3,7 @@
 {
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelModules = [ "kvm-amd" ];
-  boot.kernelParams = [ "hugepages=2048" "elevator=bfq" ];
+  boot.kernelParams = [ "hugepages=2048" "elevator=mq-deadline" ];
   boot.tmp.useTmpfs = true;
   boot.tmp.tmpfsSize = "1G";
 
