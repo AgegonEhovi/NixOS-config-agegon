@@ -64,7 +64,7 @@
     jdk24
     distrobox
     discord
-    wlroots
+    wl-clipboard
   ];
 
   # OpenSSH daemon

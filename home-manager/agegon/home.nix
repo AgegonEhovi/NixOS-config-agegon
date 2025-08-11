@@ -22,7 +22,8 @@
     
     # Обои
     "org/gnome/desktop/background" = {
-      picture-uri-dark = "file://${nixosConfigDir}/home-manager/agegon/wallpaper/marine-tunnel.jpg";
+      # picture-uri-dark = "file://${nixosConfigDir}/home-manager/agegon/wallpaper/marine-tunnel.jpg";
+      picture-uri-dark = "file://${nixosConfigDir}/home-manager/agegon/wallpaper/amber-l.jxl";
     };
 
     # Темная тема
