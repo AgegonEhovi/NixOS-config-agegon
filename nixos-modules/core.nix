@@ -4,8 +4,8 @@
   boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.kernelModules = [ "kvm-amd" ];
   boot.kernelParams = [ "hugepages=2048" "elevator=bfq" ];
-  boot.tmpOnTmpfs = true;
-  boot.tmpOnTmpfsSize = "4G";
+  boot.tmp.useTmpfs = true;
+  boot.tmp.tmpfsSize = "1G";
 
   environment.variables = {
     GSK_RENDERER = "ngl"; 
@@ -63,6 +63,7 @@
     jdk24
     distrobox
     discord
+    wlroots
   ];
 
   # OpenSSH daemon
