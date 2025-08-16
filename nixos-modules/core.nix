@@ -5,7 +5,7 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.kernelParams = [ "hugepages=2048" "elevator=mq-deadline" ];
   boot.tmp.useTmpfs = true;
-  boot.tmp.tmpfsSize = "1G";
+  # boot.tmp.tmpfsSize = "1G";
 
   environment.variables = {
     GSK_RENDERER = "ngl"; 
