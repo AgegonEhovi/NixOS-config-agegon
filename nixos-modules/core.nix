@@ -65,16 +65,6 @@
     distrobox
     discord
     wl-clipboard
-    libnotify
-
-    alacritty
-    swaybg
-    fuzzel
-    mako
-    xdg-desktop-portal-gnome
-    xdg-desktop-portal-gtk
-    swaybg
-    xwayland-satellite
   ];
 
   # OpenSSH daemon
