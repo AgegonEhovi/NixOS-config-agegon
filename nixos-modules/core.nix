@@ -65,6 +65,7 @@
     distrobox
     discord
     wl-clipboard
+    libnotify
 
     alacritty
     swaybg
