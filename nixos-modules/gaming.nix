@@ -11,11 +11,12 @@
   };
 
   # Gamemode
-  # programs.gamemode.enable = true;
+  programs.gamemode.enable = true;
 
   # System Packages for Gaming
   environment.systemPackages = with pkgs; [
-    # mangohud
-    # vulkan-tools
+    mangohud
+    vulkan-tools
+    heroic
   ];
 }
