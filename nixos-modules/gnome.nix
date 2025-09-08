@@ -8,6 +8,13 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  # Niri
+  programs.niri.enable = true;
+  security.polkit.enable = true; # polkit
+  services.gnome.gnome-keyring.enable = true; # secret service
+  security.pam.services.swaylock = {};
+  environment.systemPackages = with pkgs; [ alacritty fuzzel swaylock mako swayidle swaybg ]
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us,ru";
