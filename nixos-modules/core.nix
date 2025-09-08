@@ -46,7 +46,7 @@
     git
     tree
     telegram-desktop
-    hiddify-app
+    # hiddify-app
     keepassxc
     htop
     ranger
