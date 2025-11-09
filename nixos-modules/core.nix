@@ -65,6 +65,9 @@
     distrobox
     discord
     wl-clipboard
+	appimage-run
+    
+    katago
   ];
 
   # OpenSSH daemon
