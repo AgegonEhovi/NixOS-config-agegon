@@ -49,7 +49,6 @@
     git
     tree
     telegram-desktop
-    # hiddify-app
     keepassxc
     htop
     ranger
@@ -66,8 +65,7 @@
     distrobox
     wl-clipboard
 	obs-studio
-
-	python313Packages.psutil
+	vscode-fhs
   ];
 
   zramSwap = {
