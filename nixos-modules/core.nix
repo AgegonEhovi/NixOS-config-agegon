@@ -2,10 +2,13 @@
 
 {
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm-amd" "fuse" ];
   boot.kernelParams = [ "hugepages=2048" "elevator=mq-deadline" ];
   boot.tmp.useTmpfs = true;
-  # boot.tmp.tmpfsSize = "1G";
+
+  boot.kernel.sysctl = {
+    "kernel.unprivileged_userns_clone" = 1;
+  };
 
   environment.variables = {
     GSK_RENDERER = "ngl"; 
@@ -63,13 +66,16 @@
     go
     jdk24
     distrobox
-    discord
     wl-clipboard
-	appimage-run
-    
-    katago
+	obs-studio
+
+	python313Packages.psutil
   ];
 
+  services.earlyoom = {
+    enable = true;
+  };
+	
   # OpenSSH daemon
   services.openssh.enable = true;
 
