@@ -71,6 +71,20 @@
 	python313Packages.psutil
   ];
 
+  zramSwap = {
+      enable = true;
+      algorithm = "zstd";           
+      memoryPercent = 50;           
+      priority = 100;              
+  };
+
+  boot.kernel.sysctl = {
+      "vm.swappiness" = 180;     
+      "vm.vfs_cache_pressure" = 500; 
+      "vm.watermark_boost_factor" = 0;    
+      "vm.watermark_scale_factor" = 200;
+  };
+
   services.earlyoom = {
     enable = true;
   };
