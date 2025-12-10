@@ -59,7 +59,6 @@
     easyeffects
     steam-run
     xray
-    nekoray
     sing-box
     qbittorrent
     python3
