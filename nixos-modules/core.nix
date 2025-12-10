@@ -64,7 +64,6 @@
     qbittorrent
     python3
     go
-    jdk24
     distrobox
     wl-clipboard
 	obs-studio
