@@ -2,12 +2,16 @@
 
 {
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelModules = [ "kvm-amd" "fuse" ];
+  boot.kernelModules = [ "kvm-amd" "fuse"];
   boot.kernelParams = [ "hugepages=2048" "elevator=mq-deadline" ];
   boot.tmp.useTmpfs = true;
 
   boot.kernel.sysctl = {
     "kernel.unprivileged_userns_clone" = 1;
+    "vm.swappiness" = 180;     
+    "vm.vfs_cache_pressure" = 500; 
+    "vm.watermark_boost_factor" = 0;    
+    "vm.watermark_scale_factor" = 200;
   };
 
   environment.variables = {
@@ -66,7 +70,12 @@
     wl-clipboard
 	obs-studio
 	vscode-fhs
+
+	moonlight-qt
   ];
+
+  services.zerotierone.enable = true;
+  services.zerotierone.joinNetworks = ["9e1948db63f31820"];
 
   zramSwap = {
       enable = true;
@@ -75,16 +84,11 @@
       priority = 100;              
   };
 
-  boot.kernel.sysctl = {
-      "vm.swappiness" = 180;     
-      "vm.vfs_cache_pressure" = 500; 
-      "vm.watermark_boost_factor" = 0;    
-      "vm.watermark_scale_factor" = 200;
-  };
-
   services.earlyoom = {
     enable = true;
   };
+
+  programs.amnezia-vpn.enable = true;
 	
   # OpenSSH daemon
   services.openssh.enable = true;
