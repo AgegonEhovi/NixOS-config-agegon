@@ -9,9 +9,10 @@
   boot.kernel.sysctl = {
     "kernel.unprivileged_userns_clone" = 1;
     "vm.swappiness" = 180;     
-    "vm.vfs_cache_pressure" = 500; 
+    "vm.vfs_cache_pressure" = 50; 
     "vm.watermark_boost_factor" = 0;    
     "vm.watermark_scale_factor" = 200;
+    "vm.max_map_count" = 2147483642;
   };
 
   environment.variables = {
