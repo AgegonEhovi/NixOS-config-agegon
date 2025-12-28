@@ -115,8 +115,12 @@
 
   programs.git = {
     enable = true;
-    userName = "AgegonEhovi";
-    userEmail = "feedcreep@yandex.ru";
+    settings = {
+      user = {
+        name = "AgegonEhovi";
+        email = "feedcreep@yandex.ru";
+      };
+    };
   };
   
   # Включение Home Manager

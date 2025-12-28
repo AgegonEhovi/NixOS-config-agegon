@@ -7,8 +7,8 @@
   # programs.throne.tunMode.enable = true;
 
   programs.throne = {
-    enable = true;              # обязательно включить сам модуль
-    package = pkgs.throne;      # или pkgs.unstable.throne, если в unstable
-    tunMode.enable = true;      # именно это даёт capabilities/setuid wrapper
+    enable = true;            
+    package = pkgs.throne;     
+    tunMode.enable = true;      
   };
 }
