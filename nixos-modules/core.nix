@@ -48,7 +48,6 @@
   # System Packages
   environment.systemPackages = with pkgs; [
     micro
-    vim
     wget
     git
     tree
@@ -68,21 +67,22 @@
     go
     distrobox
     wl-clipboard
-	obs-studio
-	vscode-fhs
-
-	moonlight-qt
+	  obs-studio
+	  vscode-fhs
+    proxychains-ng
   ];
-
-  services.zerotierone.enable = true;
-  services.zerotierone.joinNetworks = ["9e1948db63f31820"];
-
-  zramSwap = {
-      enable = true;
-      algorithm = "zstd";           
-      memoryPercent = 50;           
-      priority = 100;              
+  
+  programs.java = {
+    enable = true;
   };
+  
+
+  # zramSwap = {
+  #     enable = true;
+  #     algorithm = "zstd";           
+  #     memoryPercent = 50;           
+  #     priority = 100;              
+  # };
 
   services.earlyoom = {
     enable = true;

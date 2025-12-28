@@ -18,5 +18,6 @@
     mangohud
     vulkan-tools
     heroic
+    protonplus
   ];
 }
