@@ -34,6 +34,7 @@
           ./nixos-modules/nix.nix
           ./nixos-modules/users.nix
           ./nixos-modules/security.nix
+          ./nixos-modules/niri.nix
 
           # Подключаем Home Manager
           home-manager.nixosModules.home-manager
